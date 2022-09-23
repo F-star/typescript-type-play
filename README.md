@@ -1,5 +1,5 @@
 
-### [First of Array](https://github.com/type-challenges/type-challenges/blob/main/questions/00014-easy-first/README.md)
+### [14. First of Array](https://github.com/type-challenges/type-challenges/blob/main/questions/00014-easy-first/README.md)
 
 取出 数组/元组的 第一个类型。
 
