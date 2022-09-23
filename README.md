@@ -1,7 +1,7 @@
 
-### First of Array
-取出 数组/元组的 第一个类型
-https://github.com/type-challenges/type-challenges/blob/main/questions/00014-easy-first/README.md
+### [First of Array](https://github.com/type-challenges/type-challenges/blob/main/questions/00014-easy-first/README.md)
+
+取出 数组/元组的 第一个类型。
 
 ```ts
 type First<T extends any[]> =
