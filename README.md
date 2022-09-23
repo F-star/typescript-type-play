@@ -31,3 +31,15 @@ type Includes<T extends readonly any[], U> =
       : Includes<Rest, U>
     : false
 ```
+
+### [3. Omit](https://github.com/type-challenges/type-challenges/blob/main/questions/00003-medium-omit/README.md)
+
+移除对象结构中的一些属性。
+
+```ts
+type MyOmit<T extends Record<string, any>, K extends keyof T> = {
+  [P in keyof T
+    as P extends K ? never : P
+  ]: T[P]
+}
+```
