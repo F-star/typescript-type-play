@@ -1,3 +1,5 @@
+类型体操练习。
+
 题目来自 [type-challenges](https://github.com/type-challenges/type-challenges)
 
 常用的判断相等的 Equal，类型体操中不时会用到。
