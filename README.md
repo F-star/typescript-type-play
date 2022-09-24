@@ -57,3 +57,18 @@ type MyReadonly2<T extends object, K extends keyof T = keyof T> = {
   readonly [P in K]: T[P]
 }
 ```
+
+### [9. Deep Readonly](https://github.com/type-challenges/type-challenges/blob/main/questions/00009-medium-deep-readonly/README.md)
+
+深度 readonly，嵌套的对象的 key 也加上 readonly
+
+```ts
+type DeepReadonly<T> = {
+  readonly [P in keyof T]: 
+    T[P] extends object
+      ? T[P] extends Function
+        ? T[P]
+        : DeepReadonly<T[P]>
+      : T[P]
+}
+```
