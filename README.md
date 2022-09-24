@@ -43,3 +43,15 @@ type MyOmit<T extends Record<string, any>, K extends keyof T> = {
   ]: T[P]
 }
 ```
+
+### [8. Readonly 2](https://github.com/type-challenges/type-challenges/blob/main/questions/00008-medium-readonly-2/README.md)
+
+将对象类型中特定的 key 设置为 readonly，第二个参数 T 是可选的，不提供的话，将所有 key 设置为 readonly
+
+```ts
+type MyReadonly2<T extends object, K extends keyof T = keyof T> = {
+  [P in Exclude<keyof T, K>]: T[P]
+} & {
+  readonly [P in K]: T[P]
+}
+```
