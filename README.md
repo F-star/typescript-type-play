@@ -72,3 +72,22 @@ type DeepReadonly<T> = {
       : T[P]
 }
 ```
+
+### [12. Chainable Options](https://github.com/type-challenges/type-challenges/blob/main/questions/00012-medium-chainable-options/README.md)
+
+对象类型，带有 options 方法和 get 方法。
+
+options 方法接受字符串类型的 key，和任意类型的 value，将它们加到一个配置对象中。然后通过 get 获得这个配置对象。
+
+key 不能重复，否则编译不能通过。（type-challenges 的测试用例不符合这一点，允许同名的 key 的值类型不同时，使用新的值覆盖原来的值，我认为这是错误的测试用例，实现上不考虑这一点）
+
+```ts
+type Chainable<T = {}> = {
+  option<K extends string, V>(
+    key: K extends keyof T ? never : K,
+    value: V
+  ): Chainable<T & { [P in K]: V }>
+
+  get(): T
+}
+```
